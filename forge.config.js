@@ -9,7 +9,9 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        "name": "tu_nombre_de_aplicacion"
+      },
     },
     {
       name: '@electron-forge/maker-zip',

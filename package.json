@@ -8,10 +8,10 @@
     "production": "npm run build && npm run start",
     "app": "npm run build && electron-forge start",
     "make": "electron-forge make",
-    "clean": "rimraf ./dist && rimraf ./build",
-    "compile": "npm run clean && npm run build && electron-packager . lindo-gatito  --arch=x64 --out ./dist",
+    "clean": "rimraf ./dist && rimraf ./build ",
+    "compile": "npm run clean && npm run build && electron-packager . electron  --arch=x64,ia32 --out ./dist",
     "package": "electron-forge package",
-    "copy-views": "copyfiles -u 1 src/**/*.ejs build/src",
+    "copy-views": "copyfiles -u 1 src/**/*.ejs build/src && copyfiles -u 1 src/public/* build/src",
     "build": "tsc && tsc-alias -p tsconfig.json && npm run copy-views"
   },
   "keywords": [],
