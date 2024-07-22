@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Personal</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="navbar-left">
+        <span>CEINMUJER</span>
+      </div>
+      <div id="navbar-right">
+        <img src="logo-unerg.png" alt="Logo" id="navbar-logo" />
+      </div>
+    </nav>
+    <div id="main-container">
+      <div id="inicio">
+        <h1>Bienvenido al Sistema de Registro Ceinmujer</h1>
+        <p>
+          CENTRO DE ESTUDIOS E INVESTIGACIÓN SOBRE LA MUJER, INFANCIA Y
+          ADOLESCENCIA.
+        </p>
+        <img src="ceinm.png" alt="Logo de la Empresa" id="logo-empresa" />
+        <button id="login-btn">Iniciar Sesión</button>
+      </div>
+      <div id="login-container" style="display: none;">
+        <h1>Login</h1>
+        <form id="login-form">
+          <input
+            type="password"
+            id="admin-password"
+            placeholder="Contraseña"
+            required
+          />
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+      </div>
+      <div id="registration-container" style="display: none;">
+        <h1>Registro de Personal</h1>
+        <form id="registration-form">
+          <input type="text" id="nombre" placeholder="Nombre" required />
+          <input type="text" id="apellidos" placeholder="Apellidos" required />
+          <input type="text" id="cedula" placeholder="Cédula" required />
+          <input type="text" id="telefono" placeholder="Teléfono" required />
+          <input type="text" id="direccion" placeholder="Dirección" required />
+          <select id="nucleo" required onchange="selectNucleo()">
+            <option value="" disabled selected>Seleccione Núcleo</option>
+            <option value="Calabozo">Calabozo</option>
+            <option value="San Juan de los Morros"
+              >San Juan de los Morros</option
+            >
+            <option value="Valle de la Pascua">Valle de la Pascua</option>
+            <option value="Zaraza">Zaraza</option>
+            <option value="Altagracia">Altagracia</option>
+            <option value="Maturin">Maturin</option>
+            <option value="aulaMovil">Aula Móvil</option>
+          </select>
+          <div id="estado-container" style="display: none;">
+            <select id="estado">
+              <option value="" disabled selected>Seleccione Estado</option>
+              <option value="Amazonas">Amazonas</option>
+              <option value="Anzoátegui">Anzoátegui</option>
+              <option value="Apure">Apure</option>
+              <option value="Aragua">Aragua</option>
+              <option value="Barinas">Barinas</option>
+              <option value="Bolívar">Bolívar</option>
+              <option value="Carabobo">Carabobo</option>
+              <option value="Cojedes">Cojedes</option>
+              <option value="Delta Amacuro">Delta Amacuro</option>
+              <option value="Falcón">Falcón</option>
+              <option value="Guárico">Guárico</option>
+              <option value="Lara">Lara</option>
+              <option value="Mérida">Mérida</option>
+              <option value="Miranda">Miranda</option>
+              <option value="Monagas">Monagas</option>
+              <option value="Nueva Esparta">Nueva Esparta</option>
+              <option value="Portuguesa">Portuguesa</option>
+              <option value="Sucre">Sucre</option>
+              <option value="Táchira">Táchira</option>
+              <option value="Trujillo">Trujillo</option>
+              <option value="Vargas">Vargas</option>
+              <option value="Yaracuy">Yaracuy</option>
+              <option value="Zulia">Zulia</option>
+            </select>
+          </div>
+          <select id="tendencia" required>
+            <option value="" disabled selected>Seleccione Tendencia</option>
+            <option value="Si">Sí</option>
+            <option value="No">No</option>
+          </select>
+          <input type="text" id="area" placeholder="Área" required />
+          <button type="submit" id="submit-button">Registrar</button>
+        </form>
+        <div id="button-container">
+          <button id="generate-pdf">Generar PDF de la Lista Completa</button>
+          <button id="generate-pdf-search">
+            Generar PDF del Resultado de la Búsqueda
+          </button>
+        </div>
+        <input type="text" id="search-bar" placeholder="Buscar..." />
+        <div id="tabla-container">
+          <table id="registro-tabla">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Cédula</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+                <th>Núcleo</th>
+                <th>Área</th>
+                <th>Tendencia</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="/jspdf.umd.min.js"></script>
+    <script src="/jspdf.plugin.autotable.min.js"></script>
+    <script src="/scripts.js"></script>
+    <script>
+      function selectNucleo() {
+        const nucleoSelect = document.getElementById("nucleo");
+        const estadoContainer = document.getElementById("estado-container");
+
+        if (nucleoSelect.value === "aulaMovil") {
+          estadoContainer.style.display = "block";
+        } else {
+          estadoContainer.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

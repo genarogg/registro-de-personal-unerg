@@ -1,0 +1,178 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    90deg,
+    rgba(36, 198, 220, 1) 0%,
+    rgba(81, 74, 157, 1) 100%
+  );
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed to flex-start to avoid overlap with navbar */
+  height: 100vh;
+  margin: 0;
+}
+
+nav#navbar {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#navbar-left span {
+  font-size: 27px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  top: 10px;
+}
+
+#navbar-right img {
+  width: 90px;
+  position: relative;
+  right: 40px;
+}
+
+#main-container {
+  width: 100%;
+  max-width: 800px; /* Increased max-width */
+  text-align: center;
+  padding-top: 80px; /* To prevent overlap with navbar */
+  overflow: hidden;
+}
+
+#inicio {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logo-empresa {
+  width: 150px;
+  margin: 20px 0;
+}
+
+#login-btn {
+  margin-top: 20px;
+  background: #2636c5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#login-btn:hover {
+  background: #8a28b1;
+}
+
+#login-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+#registration-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 700px; /* Increased width */
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select,
+button {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+button {
+  background: #2636c5;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #8a28b1;
+}
+
+#tabla-container {
+  margin-top: 20px;
+  overflow-y: auto;
+  max-height: 400px; /* Adjust as needed */
+}
+
+table {
+  width: 100%; /* Make table slightly smaller than the container */
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+td {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#button-container {
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#search-bar {
+  width: 90%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}

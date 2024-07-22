@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "outDir": "./build",
+    "strict": true,
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types", "src/types"],
+
+    "baseUrl": ".",
+    "paths": {
+      "@router": ["src/routers/index.ts"],
+      "@email/*": ["src/email/*"]
+    }
+  },
+
+  "include": ["*.ts", "electron.js"],
+  "exclude": ["node_modules"]
+}
